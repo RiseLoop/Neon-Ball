@@ -1,7 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
 import { GameStats } from '../types';
 
-const apiKey = process.env.API_KEY || '';
+// Safely access API key, defaulting to empty string if process is undefined
+const getApiKey = () => {
+  try {
+    return process.env.API_KEY || '';
+  } catch {
+    return '';
+  }
+};
+
+const apiKey = getApiKey();
 
 // Initialize Gemini
 // Note: We create the client lazily or handle the missing key gracefully in the UI

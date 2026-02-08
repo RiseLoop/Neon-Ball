@@ -30,8 +30,13 @@
   }
 }
 </script>
+<script>
+  // Polyfill process for browser environments (GitHub Pages)
+  window.process = window.process || { env: { NODE_ENV: 'production' } };
+</script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

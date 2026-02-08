@@ -10,8 +10,10 @@ const App: React.FC = () => {
   const [hasApiKey, setHasApiKey] = useState<boolean>(false);
 
   useEffect(() => {
-    // Check for API key availability (in a real app, you might validate this more robustly)
-    if (process.env.API_KEY) {
+    // Check for API key availability (safely for browser env)
+    const hasKey = typeof process !== 'undefined' && process.env && process.env.API_KEY;
+    
+    if (hasKey) {
       setHasApiKey(true);
       generateGameCommentary('START').then(setAiComment);
     } else {
