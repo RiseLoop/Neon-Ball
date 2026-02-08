@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import GameCanvas from './components/GameCanvas';
-import AICommentator from './components/AICommentator';
-import { GameState } from './types';
-import { generateGameCommentary } from './services/geminiService';
+import GameCanvas from './components/GameCanvas.tsx';
+import AICommentator from './components/AICommentator.tsx';
+import { GameState } from './types.ts';
+import { generateGameCommentary } from './services/geminiService.ts';
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>(GameState.MENU);

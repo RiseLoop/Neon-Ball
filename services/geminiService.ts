@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { GameStats } from '../types';
+import { GameStats } from '../types.ts';
 
 // Safely access API key, defaulting to empty string if process is undefined
 const getApiKey = () => {

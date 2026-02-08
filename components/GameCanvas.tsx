@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { GameState, Ball, Paddle, Brick, Particle, GameStats, PowerUp, PowerUpType } from '../types';
-import { generateGameCommentary } from '../services/geminiService';
+import { GameState, Ball, Paddle, Brick, Particle, GameStats, PowerUp, PowerUpType } from '../types.ts';
+import { generateGameCommentary } from '../services/geminiService.ts';
 
 interface GameCanvasProps {
   setAiComment: (comment: string) => void;
